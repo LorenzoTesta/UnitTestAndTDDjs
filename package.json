@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "APP_ENVIROMENT=test ./node_modules/.bin/nyc ./node_modules/.bin/mocha --exit",
+    "test": "APP_ENVIROMENT=test ./node_modules/.bin/nyc ./node_modules/.bin/mocha --exit --timeout 10000",
     "build": "rm -rf dist && npm run lint && ./node_modules/.bin/babel . --out-dir dist --ignore node_modules && cp .env dist",
     "lint": "./node_modules/.bin/eslint 'index.js' 'server/**/*.js'",
     "test:coverage": "nyc --reporter=lcov yarn test"

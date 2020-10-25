@@ -1,3 +1,4 @@
 # Mocha options
 ./test/utils/operations.test.js
+./test/bigComponent/bigComponent.test.js
 --require @babel/register
