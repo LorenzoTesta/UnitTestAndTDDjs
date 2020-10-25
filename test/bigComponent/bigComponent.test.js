@@ -13,10 +13,10 @@ describe('getBigComponentValue', () => {
     it('empty params', async ()=> {
 
         sinon.stub(partA, 'partAfn').returns(true);
-        sinon.stub(partB, 'partBfn').returns(42);
+        sinon.stub(partB, 'partBfn').returns(11);
 
         let a = await getBigComponentValue(22, 5, 'BROWN')
-        expect(a).to.equal('true - 133210 - 42')
+        expect(a).to.equal('true - 133210 - 11')
     })
 
 })
