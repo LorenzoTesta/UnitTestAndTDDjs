@@ -10,16 +10,18 @@ async function getBigComponentValue(a, b, c) {
 
     let partBResult = await partBfn(b, c)
 
+    let result = partAResult + ' - '
     switch(c) {
         case 'BROWN':
-            return 1
+            result += 1
         case 'BLACK':
-            return 33
+            result += 33
         case 'PINK':
-            return 21
+            result += 21
         default:
-            return 0;
+            result += 0;
     }
+    return result + ' - ' + partBResult
 }
 
 export {getBigComponentValue}
