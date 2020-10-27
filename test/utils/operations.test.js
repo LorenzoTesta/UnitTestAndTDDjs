@@ -1,6 +1,6 @@
 
 import chai from 'chai'
-import { sum, sortNumbers } from '../../server/utils/operations'
+import {sum, sortNumbers, isValidPage} from '../../server/utils/operations'
 
 let expect = chai.expect
 
@@ -18,3 +18,28 @@ describe('sortNumbers', ()=> {
         expect(actual).to.eql([3, 11, 44, 52, 55])
     })
 })
+
+
+describe('isValidPage', () => {
+    it('parametric', () => {
+        const params = [
+            { page: 0, expected: true },
+            { page: 1, expected: true },
+            { page: null, expected: false },
+            { page: undefined, expected: false },
+            { page: 'null', expected: false },
+            { page: '0', expected: true },
+            { page: '1', expected: true },
+            { page: 150, expected: true },
+            { page: -1, expected: false },
+            { page: -3, expected: false }
+            // {page: true, expected: false},    // TODO: wrong, does that have any sense?
+            // {page: false, expected: false},   // TODO: wrong, does that have any sense?
+            // {page: '', expected: false},      // TODO: wrong, does that have any sense?
+        ];
+        params.map(v => {
+            const actual = isValidPage(v.page);
+            return expect(actual).to.equal(v.expected);
+        });
+    });
+});

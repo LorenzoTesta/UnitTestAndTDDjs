@@ -3,5 +3,6 @@
 ./test/utils/operations.test.js
 ./test/bigComponent/bigComponent.test.js
 ./test/fizzBuzz/fizzBuzz.test.js
+./test/roman2numeral/roman2numeral.test.js
 
 --require @babel/register
